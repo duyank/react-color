@@ -20,8 +20,9 @@ export class Alpha extends (PureComponent || Component) {
     window.addEventListener('mouseup', this.handleMouseUp)
   }
 
-  handleMouseUp = () => {
+  handleMouseUp = (e) => {
     this.unbindEventListeners()
+    this.props.onChangeComplete && this.props.onChangeComplete(alpha.calculateChange(e, this.props.hsl, this.props.direction, this.props.a, this.container));
   }
 
   unbindEventListeners = () => {

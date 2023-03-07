@@ -41,8 +41,9 @@ export class Saturation extends (PureComponent || Component) {
     renderWindow.addEventListener('mouseup', this.handleMouseUp)
   }
 
-  handleMouseUp = () => {
+  handleMouseUp = (e) => {
     this.unbindEventListeners()
+    this.props.onChangeComplete && this.props.onChangeComplete(saturation.calculateChange(e, this.props.hsl, this.container));
   }
 
   unbindEventListeners() {

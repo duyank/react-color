@@ -1,6 +1,6 @@
 {
-  "name": "react-color",
-  "version": "2.19.3",
+  "name": "@duyank/react-color",
+  "version": "0.0.6",
   "description": "A Collection of Color Pickers from Sketch, Photoshop, Chrome & more",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -19,8 +19,8 @@
     "eslint": "eslint src/**/*.js",
     "lib": "npm run clean-lib && babel src -d lib",
     "es": "npm run clean-es && node scripts/use-module-babelrc.js && babel src -d es && node scripts/restore-original-babelrc.js",
-    "clean-lib": "rm -rf lib && mkdir lib",
-    "clean-es": "rm -rf es && mkdir es",
+    "clean-lib": "rimraf -rf lib && mkdir lib",
+    "clean-es": "rimraf -rf es && mkdir es",
     "prepublish": "npm run lib && npm run es",
     "docs": "npm run docs-server",
     "docs-server": "node ./scripts/docs-server",
@@ -30,7 +30,7 @@
     "chromatic": "chromatic --project-token=9z2kaxsuz"
   },
   "sideEffects": false,
-  "homepage": "http://casesandberg.github.io/react-color/",
+  "homepage": "https://github.com/duyank/react-color",
   "keywords": [
     "react",
     "color picker",

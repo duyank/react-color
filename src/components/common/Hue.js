@@ -18,8 +18,9 @@ export class Hue extends (PureComponent || Component) {
     window.addEventListener('mouseup', this.handleMouseUp)
   }
 
-  handleMouseUp = () => {
+  handleMouseUp = (e) => {
     this.unbindEventListeners()
+    this.props.onChangeComplete && this.props.onChangeComplete(hue.calculateChange(e, this.props.direction, this.props.hsl, this.container));
   }
 
   unbindEventListeners() {
@@ -38,7 +39,7 @@ export class Hue extends (PureComponent || Component) {
           boxShadow: this.props.shadow,
         },
         container: {
-          padding: '0 2px',
+          padding: '0 3px',
           position: 'relative',
           height: '100%',
           borderRadius: this.props.radius,
