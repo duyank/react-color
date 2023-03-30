@@ -1,7 +1,7 @@
 export const calculateChange = (e, hsl, container) => {
   const { width: containerWidth, height: containerHeight } = container.getBoundingClientRect()
-  const x = typeof e.pageX === 'number' ? e.pageX : e.touches[0].pageX
-  const y = typeof e.pageY === 'number' ? e.pageY : e.touches[0].pageY
+  const x = typeof e.pageX === 'number' ? e.pageX :  (e.touches.length > 0 && e.touches[0].pageX || e.changedTouches.length > 0 && e.changedTouches[0].pageX)
+  const y = typeof e.pageY === 'number' ? e.pageY :  (e.touches.length > 0 && e.touches[0].pageY || e.changedTouches.length > 0 && e.changedTouches[0].pageY)
   let left = x - (container.getBoundingClientRect().left + window.pageXOffset)
   let top = y - (container.getBoundingClientRect().top + window.pageYOffset)
 

@@ -102,6 +102,7 @@ export class Saturation extends (PureComponent || Component) {
         onMouseDown={ this.handleMouseDown }
         onTouchMove={ this.handleChange }
         onTouchStart={ this.handleChange }
+        onTouchEnd={ this.handleMouseUp }
       >
         <style>{`
           .saturation-white {

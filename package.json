@@ -1,6 +1,6 @@
 {
   "name": "@duyank/react-color",
-  "version": "0.0.6",
+  "version": "0.0.9",
   "description": "A Collection of Color Pickers from Sketch, Photoshop, Chrome & more",
   "main": "lib/index.js",
   "module": "es/index.js",
